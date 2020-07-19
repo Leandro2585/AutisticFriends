@@ -12,30 +12,26 @@ module.exports = {
         .join('tb_user','tb_user.user_id', '=', 'tb_task.user_id')
         .where('tb_user.user_id', user_id)
         .select('tb_task.*', 'user_name');
-        
+
         res.header('X-Total-Count', count['count(*)']);
         return res.json(response);
 
     },
     async create(req, res){
 
-        const { 
+        const {
+            task_title,
             task_description,
             task_time, } = req.body;
 
         const user_id = req.headers.login;
 
-        const neuro_id = req.headers.authorization;
-
-        if(!neuro_id){
-            return res.send({ message: "You doesn't permission"})
-        }
-        
         const response = await connection('tb_task')
             .insert({
+                task_title,
                 task_description,
                 task_time,
-                user_id, 
+                user_id,
             })
         res.json({ response })
     }

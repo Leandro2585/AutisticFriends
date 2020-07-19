@@ -2,6 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable('tb_task', function(table){
         table.increments('task_id').primary()
+        table.string('task_title').notNullable()
         table.string('task_description').notNullable()
         table.time('task_time').notNullable()
         table.string('user_id').notNullable()

@@ -8,13 +8,6 @@ module.exports = {
             .select('*')
             return res.json(querie)
     },
-    async indexNeuro(req, res){
-        const queries_neuro = req.headers.authorization;
-        const querie = await connection('tb_queries')
-            .where('queries_neuro', queries_neuro)
-            .select('*')
-            return res.json(querie)
-    },
     async create(req, res){
         const queries_neuro = req.headers.authorization;
 

@@ -16,19 +16,15 @@ module.exports = {
         }
     },
     async create(req, res){
-        const {
-            user_name,
-            user_email,
-            user_tel } = req.body;
+        const { user_name, user_email, user_tel } = req.body;
         let { user_password } = req.body;
         let tmp_pass = user_password
-        user_password = cryptPass.criptografar(tmp_pass);
+        user_password = cryptPass.encrypt(tmp_pass);
         const user_id = GeradorId();
         try{
             const response = await connection('tb_user').insert({
                 user_id,
                 user_name,
-                user_tel,
                 user_email,
                 user_password,
             });
