@@ -1,7 +1,7 @@
-
 exports.up = function(knex) {
     return knex.schema.createTable('tb_queries', function(table){
         table.increments('queries_id').primary().notNullable()
+        table.string('queries_title').notNullable()
         table.string('queries_description').notNullable()
         table.date('queries_date').notNullable()
         table.time('queries_time').notNullable()
