@@ -4,16 +4,14 @@ import { FiBell, FiPlus } from 'react-icons/fi';
 import  './style.css';
 
 export default function Header(props){
-    if(localStorage.getItem('user_name') !== null && localStorage.getItem('user_name') !== undefined){
-      var nome = localStorage.getItem('user_name');
-      var firstLetter = nome.substr(0,1);
-    }
-    else if(localStorage.getItem('neuro_name') !== null && localStorage.getItem('neuro_name') !== undefined){
-      var nome = localStorage.getItem('neuro_name');
-      var firstLetter = nome.substr(0,1);
+    const name = localStorage.getItem('user_name')
+    if(name){
+      if(name !== null && name !== undefined){
+        var firstLetter = name.substr(0,1);
+      }
     }
     function Button(){
-      if(props.rota !== undefined && localStorage.getItem('neuro_name') !== null && localStorage.getItem('neuro_name') !== undefined){
+      if(props.rota !== undefined && name !== null && name !== undefined){
       return(
         <button>
         <Link to={props.rota}>
@@ -31,7 +29,7 @@ export default function Header(props){
       <nav>
         <FiBell size={18}/>
         <div className="letter">{ firstLetter }</div>
-        <span>{ nome }</span>
+        <span>{ name }</span>
       </nav>
       <header className="title">
       <h1>{props.title}</h1>

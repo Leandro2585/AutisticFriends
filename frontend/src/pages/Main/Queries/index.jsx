@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Card from '../../../components/Card';
 import './style.css';
 import api from '../../../services/api';
 export default function Queries(){
 
-    // const [ querie, setQuerie ] = useState([]);
-    //
-    //
+    const [queries, setQuerie] = useState([]);
+
+
     // if(localStorage.getItem('neuro_id')){
     //     const neuro_id = localStorage.getItem('neuro_id')
     //     useEffect(() => {
-    //         api.get('querie/neuro', {
+    //         api.get('queries/neuro', {
     //             headers: {
     //                 authorization: neuro_id
     //             }
@@ -18,31 +19,34 @@ export default function Queries(){
     //         });
     //     }, neuro_id)
     //     }
-    // else if(localStorage.getItem('user_id')){
-    //     const user_id = localStorage.getItem('user_id')
-    //
-    //     useEffect(() => {
-    //         api.get('querie', {
-    //             headers: {
-    //                 login: user_id
-    //             }
-    //         }).then(response => {
-    //             setQuerie(response.data)
-    //         });
-    //     }, user_id)
-    //     }
+
+        const user_id = localStorage.getItem('user_id')
+
+        useEffect(() => {
+            api.get('querie', {
+                headers: {
+                    login: user_id
+                }
+            }).then(response => {
+                setQuerie(response.data)
+            });
+        }, user_id)
+
 
     return(
         <section className="container_list">
         <ul>
-          <li>a</li>
-          <li>b</li>
-          <li>c</li>
-          <li>d</li>
-          <li>e</li>
-          <li>f</li>
-          <li>g</li>
-          <li>h</li>
+          {queries.map((querie) => (
+          <li>
+          <Card
+            key={querie.queries_id}
+            tb="tb_querie"
+            title={querie.queries_title}
+            description={querie.queries_description}
+            date={querie.queries_date}
+            time={querie.queries_time}/>
+          </li>
+        ))}
         </ul>
         </section>
     );

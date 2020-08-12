@@ -13,11 +13,16 @@
   align-items: center;
   justify-content: flex-end;
   padding: 10px;
-  border-radius: 8px 8px 0px 0px;
-  background-color: var(--blue);
+  border-radius: 4px 4px 0px 0px;
+  background: var(--blue);
 }
-.container header span{
+.container header button{
   color: white;
+  border:0;
+  background: none;
+}
+.container header button:hover{
+  cursor:pointer;
 }
 .container .description{
   height: 20vh;
@@ -27,7 +32,7 @@
 }
 .container .description h1{
   text-indent: 1em;
-  
+
   line-height: 2em;
 }
 .container .description p {
@@ -42,9 +47,9 @@
   align-items: center;
   justify-content: flex-end;
   padding: 10px;
-  margin-top: ;
-  border-radius: 0px 0px 8px 8px;
-  background-color: rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 0px 0px 4px 4px;
+  background-color: rgba(0,0,0,0.1);
 }
 .container footer span{
   font-size: 0.8em;

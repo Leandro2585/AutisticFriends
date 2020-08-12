@@ -34,5 +34,12 @@ module.exports = {
                 user_id,
             })
         res.json({ response })
+    },
+    async delete(req, res){
+        const { id_task } = req.params;
+        const response = await connection('tb_task')
+            .where('task_id', id_task)
+            .del();
+        res.json({ response })
     }
 }

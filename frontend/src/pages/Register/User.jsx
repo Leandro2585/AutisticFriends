@@ -7,14 +7,13 @@ export default function Register(){
     const history = useHistory();
     const [ user_name, setUserName ] = useState('');
     const [ user_email, setUserEmail ] = useState('');
-    const [ user_tel, setUserTel ] = useState('');
     const [ user_password, setUserPass ] = useState('');
+    const [ user_confirm, setConfirmPass ] = useState('');
 
     async function handleRegisterUser(e){
         e.preventDefault();
         const data = {
             user_name,
-            user_tel,
             user_email,
             user_password
         };
@@ -43,30 +42,20 @@ export default function Register(){
                     placeholder="example@example.com"
                     value={user_email}
                     onChange={e => setUserEmail(e.target.value)}/>
-              <div className="label-group">
-              <label>Telephone</label>
+
+
               <label>Password</label>
-              </div>
-              <div className="input-group">
-                <input
-                    type="text"
-                    placeholder="Tel:"
-                    value={user_tel}
-                    onChange={e => setUserTel(e.target.value)}/>
                 <input
                     type="password"
                     placeholder="*******"
                     value={user_password}
                     onChange={e => setUserPass(e.target.value)}/>
-              </div>
+
+
                 <button type="submit" className="btn">Register</button>
                 <Link to="/logon/user">
                   <FiArrowLeft size={15}/>
                   Já possuo uma conta
-                </Link>
-                <Link to="/register/neuro">
-                  <FiArrowLeft size={15}/>
-                  Sou um instrutor
                 </Link>
             </form>
 

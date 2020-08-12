@@ -9,7 +9,6 @@ module.exports = {
             return res.json(querie)
     },
     async create(req, res){
-        const queries_neuro = req.headers.authorization;
 
         const queries_user = req.headers.login;
 
@@ -19,17 +18,12 @@ module.exports = {
             queries_time
         } = req.body;
 
-        if(!queries_neuro){
-            return res.json("Id não reconhecido")
-        }
-
         const response = await connection('tb_queries')
             .insert({
                 queries_description,
                 queries_date,
                 queries_time,
-                queries_user,
-                queries_neuro
+                queries_user
             });
         res.json({ response });
     }

@@ -14,7 +14,8 @@
 body {
     font-family: Roboto, sans-serif;
     color:var(--dark);
-    background:#fafafa;
+    background: #fafafa;
+
 }
 input{
   border:0;

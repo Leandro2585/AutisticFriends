@@ -15,19 +15,19 @@ export default function RoutesProfile(){
         <Dashboard/>
       </Route>
       <Route exact path="/profile/queries">
-        <Header title="Queries" buttonTitle="Add Querie" rota="addQuerie"/>
+        <Header title="Consultas" buttonTitle="Add Querie" rota="addQuerie"/>
         <Queries/>
       </Route>
       <Route exact path="/profile/tasks">
-        <Header title="Tasks" buttonTitle="Add Task" rota="addTask"/>
+        <Header title="Tarefas" buttonTitle="Add Task" rota="addTask"/>
         <Tasks/>
       </Route>
       <Route exact path='/profile/addQuerie'>
-        <Header title="Add Querie"/>
+        <Header title="Add Consulta"/>
         <AddQuerie/>
       </Route>
       <Route exact path="/profile/addTask">
-        <Header title="Add Task"/>
+        <Header title="Add Tarefa"/>
         <AddTask />
       </Route>
       <Route exact path="/profile/users">

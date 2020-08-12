@@ -11,28 +11,18 @@ export default function Menu(){
       localStorage.clear();
       history.push('/');
     }
-    function renderPrivateRoutes(){
-      var neuro_id = localStorage.getItem('neuro_id');
-      if(neuro_id !== undefined && neuro_id !== null){
-        return(
-          <Link to="/Profile/Users">Users<FiUsers size={18}/></Link>
-        );
-      }
-      else{
-        return false;
-      }
-    }
+
+
     return(
         <aside className="container_menu">
           <div className="logo">
           </div>
           <nav>
-            <Link to="/Profile">Dashboard<FiHome size={18}/></Link>
-            <Link to="/Profile/Queries">Queries<FiBookmark size={18}/></Link>
-            <Link to="/Profile/Tasks">Tasks<FiCalendar size={18}/></Link>
-            {
-              renderPrivateRoutes()
-            }
+            <Link to="/profile">Dashboard<FiHome size={18}/></Link>
+            <Link to="/profile/queries">Queries<FiBookmark size={18}/></Link>
+            <Link to="/profile/tasks">Tasks<FiCalendar size={18}/></Link>
+            <Link to="/profile/users">Users<FiUsers size={18}/></Link>
+
             <a onClick={handleLogout}>Logout<FiPower size={18}/></a>
           </nav>
         </aside>

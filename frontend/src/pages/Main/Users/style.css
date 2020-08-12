@@ -23,19 +23,7 @@
   text-align:left;
   text-transform: capitalize;
 }
-.container_user header span:nth-child(1){
-  width:30%;
-  margin-left: 6vh;
-}
-.container_user header span:nth-child(2){
-  width:15%;
-}
-.container_user header span:nth-child(3){
-  width:25%;
-}
-.container_user header span:nth-child(4){
-  width:20%;
-}
+
 .container_user ul li{
   width:95%;
   height: 10vh;

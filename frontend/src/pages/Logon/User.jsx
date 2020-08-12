@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory,Link } from 'react-router-dom';
-import { FaChalkboardTeacher, FaUserPlus } from 'react-icons/fa';
+import { FaUserPlus } from 'react-icons/fa';
 import './style.css';
 import api from '../../services/api';
 export default function Logon(){
@@ -45,9 +45,6 @@ export default function Logon(){
                 <Link to="/register/user">
                   <FaUserPlus size={15}/>
                   Ainda não possuo uma conta</Link>
-                <Link to="/logon/instructor">
-                  <FaChalkboardTeacher size={18}/>
-                  Sou um Instrutor</Link>
             </form>
         </section>
     );
