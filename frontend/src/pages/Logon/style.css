@@ -8,6 +8,7 @@
 }
 .container_log .frm{
   width: 35%;
+  min-width: 280px;
   height: 70vh;
   background: #fff;
   margin: 75px auto;

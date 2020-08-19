@@ -1,7 +1,3 @@
-
-.container_menu nav a:active{
-  border-right:1px solid;
-  border-color: var(--blue);
-  color: var(--blue);
-  opacity: 01;
+.container_dashboard{
+  grid-area: container;
 }

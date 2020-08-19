@@ -1,5 +1,6 @@
 .container_list{
   grid-area: container;
+  overflow-y: scroll;
 }
 .container_list ul{
   display: grid;
@@ -11,6 +12,6 @@
   position: relative;
   border-radius: 4px;
 }
-::-webkit-scrollbar {
-    width: 0px;
-}
+/* ::-webkit-scrollbar {
+    width: 0;
+} */

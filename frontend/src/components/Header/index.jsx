@@ -11,15 +11,17 @@ export default function Header(props){
       }
     }
     function Button(){
-      if(props.rota !== undefined && name !== null && name !== undefined){
+      if(props.rota !== undefined){
       return(
         <button>
-        <Link to={props.rota}>
-        <span>
-        <FiPlus size={20}/>
-        </span>
-        <span>{props.buttonTitle}</span>
-        </Link>
+          <Link to={props.rota}>
+          <span>
+            <FiPlus size={20}/>
+          </span>
+          <span>
+            {props.buttonTitle}
+          </span>
+          </Link>
         </button>
       );
     }

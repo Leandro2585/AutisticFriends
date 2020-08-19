@@ -1,7 +1,7 @@
 .container_list{
   grid-area: container;
 }
-.container_list ul{
+/* .container_list ul{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 24px;
@@ -10,7 +10,7 @@
 .container_list ul li{
   position: relative;
   border-radius: 4px;
-}
+} */
 ::-webkit-scrollbar {
     width: 0px;
 }

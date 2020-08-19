@@ -7,6 +7,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
+  background: #f8f8f2;
 }
 .container_add_task *{
   width: 90%;
@@ -18,7 +19,6 @@
 .container_add_task textarea{
     text-indent: 1.5em;
     resize:none;
-    
 }
 .container_add_task span{
   padding-top:20px;

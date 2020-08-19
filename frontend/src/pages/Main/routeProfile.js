@@ -5,13 +5,14 @@ import Users from './Users';
 import Queries from './Queries';
 import AddTask from './AddTask';
 import AddQuerie from './AddQuerie';
+import AddPost from './AddPost';
 import Dashboard from './Dashboard';
 import Header from '../../components/Header';
 export default function RoutesProfile(){
   return(
     <Switch>
-      <Route exact path="/profile/dashboard" >
-        <Header title="Dashboard"/>
+      <Route path="/profile/dashboard" >
+        <Header title="Dashboard" buttonTitle="Add Post" rota="addPost"/>
         <Dashboard/>
       </Route>
       <Route exact path="/profile/queries">
@@ -33,6 +34,10 @@ export default function RoutesProfile(){
       <Route exact path="/profile/users">
         <Header title="Users"/>
         <Users/>
+      </Route>
+      <Route exact path="/profile/addPost">
+        <Header title="Add Post"/>
+        <AddPost/>
       </Route>
     </Switch>
   );

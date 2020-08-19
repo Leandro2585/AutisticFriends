@@ -4,15 +4,21 @@ import './style.css';
 import api from '../../../services/api';
 export default function AddQuerie(props){
     const history = useHistory();
+    const [ queries_title, setQuerieTitle] = useState('');
     const [ queries_description, setQuerieDesc] = useState('');
     const [ queries_date, setQuerieDate] = useState('');
     const [ queries_time, setQuerieTime] = useState('');
     const user_id = localStorage.getItem('user_id');
     async function handleAddQuerie(e){
         e.preventDefault();
-        alert({queries_date})
         try{
-            const response = await api.post('querie', {
+          const data = {
+            queries_title,
+            queries_description,
+            queries_date,
+            queries_time
+          };
+            const response = await api.post('querie', data,{
                 headers: {
                     login: user_id
                 }
@@ -24,10 +30,15 @@ export default function AddQuerie(props){
             alert("Erro ao marcar consulta")
         }
     }
-
     return(
 
             <form onSubmit={handleAddQuerie} className="container_add_querie">
+                <span>Título</span>
+                <input
+                    type="text"
+                    value={queries_title}
+                    onChange={e => setQuerieTitle(e.target.value)}
+                />
                 <span>Descrição</span>
                 <textarea
                     value={queries_description}

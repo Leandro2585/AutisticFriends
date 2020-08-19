@@ -18,7 +18,7 @@ export default function Menu(){
           <div className="logo">
           </div>
           <nav>
-            <Link to="/profile">Dashboard<FiHome size={18}/></Link>
+            <Link to="/profile/dashboard">Dashboard<FiHome size={18}/></Link>
             <Link to="/profile/queries">Queries<FiBookmark size={18}/></Link>
             <Link to="/profile/tasks">Tasks<FiCalendar size={18}/></Link>
             <Link to="/profile/users">Users<FiUsers size={18}/></Link>
