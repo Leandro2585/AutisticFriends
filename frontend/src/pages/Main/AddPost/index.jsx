@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Dropzone from '../../../components/Dropzone';
 import './style.css';
 import api from '../../../services/api';
 export default function AddPost() {
   const history = useHistory();
-  const [selectedFile, setSelectedFile] = useState();
-  const [description, setDesc] = useState('');
-  const user_id = localStorage.getItem('user_id');
+  const [selectedFile, setSelectedFile] = useState('');
+  const [post_comment, setPostComment] = useState('');
+  const post_user = localStorage.getItem('user_id');
   function handleAddPost(){
-    const data = new FormData();
-    data.append('post_comment', description);
-    if(selectedFile){
-      data.append('post_image', selectedFile);
-    }
+    const image = new FormData();
+    image.append('post_image', selectedFile);
+    image.append('post_comment', post_comment);
+
+
     try{
-      api.post('post', {
+      api.post('post',image,{
           headers: {
-              login: user_id
+              login: post_user
           }
-      }, data);
+      });
+
       alert("Postado com sucesso");
       history.push('dashboard');
     }
@@ -27,6 +28,10 @@ export default function AddPost() {
       alert(err);
     }
   }
+  // useEffect(() => {
+  //   alert(selectedFile);
+  //   alert(post_comment);
+  // }, [selectedFile, post_comment])
   return (
     <form onSubmit={handleAddPost} className="container_post">
       <div>
@@ -34,8 +39,8 @@ export default function AddPost() {
       </div>
       <span>Descrição</span>
       <textarea
-          value={description}
-          onChange={e => setDesc(e.target.value)}
+          value={post_comment}
+          onChange={e => setPostComment(e.target.value)}
           cols="46"
           rows="6"></textarea>
       <button type="submit">Publicar</button>

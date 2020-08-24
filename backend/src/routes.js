@@ -22,4 +22,5 @@ routes.delete('/task/:task_id', TaskController.delete);
 routes.delete('/querie/:querie_id', QueryController.delete);
 routes.post('/post', uploads.single('post_image'), PostController.create);
 routes.get('/post', PostController.index);
+routes.get('/post/:post_id', PostController.like);
 module.exports = routes;

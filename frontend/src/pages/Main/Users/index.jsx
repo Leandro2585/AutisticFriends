@@ -28,7 +28,6 @@ export default function Users(){
     }
     return(
         <section className="container_user">
-
           <ul>
             {
               users.map((user, index) => (

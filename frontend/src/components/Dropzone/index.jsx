@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { FiUpload } from 'react-icons/fi';
 import './styles.css';
@@ -19,7 +19,6 @@ const Dropzone = ({ onFileUploaded }) => {
    onDrop,
    accept: 'image/*'
  });
-
  return(
    <div className="dropzone" {...getRootProps()}>
      <input {...getInputProps()} accept="image/*"/>
