@@ -73,8 +73,10 @@ $ npm run start
 
 <h2>💡 Tecnologias</h2>
 As ferramentas utilizadas no desenvolvimento desse projeto foram:
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
+<br>
+- [x] Node.js(https://nodejs.org/en/)
+<br>
+- [x] React(https://pt-br.reactjs.org/)
 
  <br/> Entre em contato comigo:<br/> [![Linkedin Badge](https://img.shields.io/badge/-LeandroReal-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandro-r-434b811a5/)](https://www.linkedin.com/in/leandro-r-434b811a5/)
 |
