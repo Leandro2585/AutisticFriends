@@ -1,4 +1,4 @@
-<h1 align="center"></h1>
+<h1 align="center">Autistic Friends</h1>
 <h2 title="Páginas">📌 Sobre</h2>
 <p align="left">
 Aplicação desenvolvida com a objeção de integrar crianças com TEA(Síndrome do Espectro Autista) ao mundo digital, ao ingressarem na plataforma os usuários podem marcar seus compromissos de rotina, tarefas diárias e também suas consultas com neurologistas afim de ter um cronograma de acesso dinâmico.
@@ -73,8 +73,10 @@ $ npm run start
 
 <h2>💡 Tecnologias</h2>
 As ferramentas utilizadas no desenvolvimento desse projeto foram:
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
+<br>
+- Node.js(https://nodejs.org/en/)
+<br>
+- React(https://pt-br.reactjs.org/)
 
  <br/> Entre em contato comigo:<br/> [![Linkedin Badge](https://img.shields.io/badge/-LeandroReal-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandro-r-434b811a5/)](https://www.linkedin.com/in/leandro-r-434b811a5/)
 |
