@@ -3,10 +3,6 @@ import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "t
 export class AddUserIdFieldToTasks1599948355132 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.addColumn('tasks', new TableColumn({
-            name: 'user_task',
-            type: 'int'
-        }));
 
         await queryRunner.createForeignKey('tasks', new TableForeignKey({
             name: 'UserTasks',
@@ -20,7 +16,6 @@ export class AddUserIdFieldToTasks1599948355132 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey('tasks', 'UserTasks');
-        await queryRunner.dropColumn('tasks', 'user_id');
+        await queryRunner.dropColumn('tasks', 'user_task');
     }
-
 }

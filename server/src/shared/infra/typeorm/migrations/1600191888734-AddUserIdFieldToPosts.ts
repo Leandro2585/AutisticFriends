@@ -15,7 +15,7 @@ export class AddUserIdFieldToPosts1600191888734 implements MigrationInterface {
             referencedTableName: 'users',
             onDelete: 'SET NULL',
             onUpdate: 'CASCADE'
-        }))
+        }));
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
