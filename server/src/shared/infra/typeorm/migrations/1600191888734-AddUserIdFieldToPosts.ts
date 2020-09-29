@@ -12,9 +12,7 @@ export class AddUserIdFieldToPosts1600191888734 implements MigrationInterface {
             name: 'UserPosts',
             columnNames: ['user_post'],
             referencedColumnNames: ['id'],
-            referencedTableName: 'users',
-            onDelete: 'SET NULL',
-            onUpdate: 'CASCADE'
+            referencedTableName: 'users'
         }));
     }
 

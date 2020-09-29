@@ -1,9 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 @Entity('tasks')
 class Task {
     @PrimaryGeneratedColumn('increment')
-    id: number
+    id: number;
 
     @Column()
     user_task: number;

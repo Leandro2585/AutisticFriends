@@ -3,6 +3,7 @@ import { parseISO } from 'date-fns';
 import { container } from 'tsyringe';
 import CreateTaskService from '@modules/tasks/services/CreateTaskService';
 import ListTaskService from '@modules/tasks/services/ListTaskService';
+import DeleteTaskService from '@modules/tasks/services/DeleteTaskService';
 class TaskController {
     public async create(request: Request, response: Response): Promise<Response> {
         const { user_task, title, description, date } = request.body;
@@ -20,15 +21,18 @@ class TaskController {
         return response.json(task);
     }
 
-    public async index(request: Request, response: Response) {
+    public async index(request: Request, response: Response): Promise<Response> {
         const { user_task } = request.body;
         const listTask = container.resolve(ListTaskService);
-        const tasks = await listTask.execute({
-            user_task
-        });
+        const tasks = await listTask.execute(user_task);
 
         return response.json(tasks);
-
+    }
+    public async delete(request: Request, response: Response): Promise<Response> {
+        const { user_task, id } = request.body;
+        const deleteTask = container.resolve(DeleteTaskService);
+        await deleteTask.execute({ user_task, id });
+        return response.json({ message: 'Task successfully deleted' });
     }
 }
 export default TaskController;

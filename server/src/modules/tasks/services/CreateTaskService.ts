@@ -1,16 +1,15 @@
-import { inject, injectable } from "tsyringe";
-import ITaskRepository from "../repositories/ITasksRepository";
-import ICreateTaskDTO from "../dtos/ICreateTaskDTO";
-import CreateUserService from "@modules/users/services/CreateUserService";
+import { inject, injectable } from 'tsyringe';
+import ITasksRepository from '../repositories/ITasksRepository';
+import ICreateTaskDTO from '../dtos/ICreateTaskDTO';
 
 @injectable()
 class CreateTaskService {
     constructor(
-        @inject('TaskRepository')
-        private taskRepository: ITaskRepository,
+        @inject('TasksRepository')
+        private tasksRepository: ITasksRepository,
     ) { }
     public async execute({ user_task, title, description, date }: ICreateTaskDTO) {
-        const task = await this.taskRepository.create({
+        const task = await this.tasksRepository.create({
             user_task,
             title,
             description,

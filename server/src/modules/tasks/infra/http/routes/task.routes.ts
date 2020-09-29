@@ -7,5 +7,7 @@ const taskController = new TaskController();
 
 taskRouter.use(ensureAuthenticated);
 taskRouter.post('/', taskController.create);
+taskRouter.get('/', taskController.index);
+taskRouter.delete('/', taskController.delete);
 
 export default taskRouter;
