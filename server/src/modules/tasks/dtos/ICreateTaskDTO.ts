@@ -3,4 +3,5 @@ export default interface ICreateTaskDTO {
     title: string;
     description: string;
     date: Date;
+    time: string;
 }

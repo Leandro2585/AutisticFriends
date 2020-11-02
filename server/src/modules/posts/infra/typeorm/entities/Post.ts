@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    ManyToOne,
+    JoinColumn
+} from 'typeorm';
 import User from '@modules/users/infra/typeorm/entities/User';
 
 @Entity('posts')
@@ -19,6 +25,8 @@ class Post {
     user_post: number;
 
     @ManyToOne(() => User)
-    @JoinColumn({ name: 'user_task' })
+    @JoinColumn({ name: 'user_post' })
     user: User;
 }
+
+export default Post;

@@ -39,7 +39,8 @@ class TaskRepository implements ITaskRepository {
             user_task,
             title,
             description,
-            date
+            date,
+            time
         });
         await this.ormRepository.save(task);
         return task;

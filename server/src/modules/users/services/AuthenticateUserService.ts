@@ -29,13 +29,13 @@ class AuthenticateUserService {
         const user = await this.usersRepository.findByEmail(email);
 
         if (!user) {
-            throw new AppError("Inconrrect email/password combination", 401);
+            throw new AppError("Incorrect email/password combination", 401);
         }
 
         const comparePassword = await this.hashProvider.compareHash(password, user.password);
 
         if (!comparePassword) {
-            throw new AppError("Inconrrect email/password combination", 401);
+            throw new AppError("Incorrect email/password combination", 401);
         }
 
         const { secret, expiresIn } = authConfig.jwt;

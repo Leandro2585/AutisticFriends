@@ -12,9 +12,6 @@ class User {
     email: string;
 
     @Column()
-    bio: string;
-
-    @Column()
     password: string;
 
 }

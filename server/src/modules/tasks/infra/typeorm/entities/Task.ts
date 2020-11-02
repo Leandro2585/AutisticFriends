@@ -17,6 +17,9 @@ class Task {
 
     @Column('date')
     date: Date;
+
+    @Column('time')
+    time: string;
 }
 
 export default Task;

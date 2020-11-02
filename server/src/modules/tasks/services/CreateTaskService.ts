@@ -13,7 +13,8 @@ class CreateTaskService {
             user_task,
             title,
             description,
-            date
+            date,
+            time
         });
         return task;
     }

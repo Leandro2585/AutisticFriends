@@ -1,0 +1,6 @@
+.container_list{
+  grid-area: container;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}

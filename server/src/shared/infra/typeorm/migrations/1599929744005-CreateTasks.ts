@@ -24,7 +24,11 @@ export class CreateTasks1599929744005 implements MigrationInterface {
                     },
                     {
                         name: 'date',
-                        type: 'DATETIME'
+                        type: 'DATE'
+                    },
+                    {
+                        name: 'time',
+                        type: 'TIME'
                     }
                 ]
             })
