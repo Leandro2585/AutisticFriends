@@ -8,16 +8,7 @@ class PostsRepository implements IPostsRepository {
     constructor() {
         this.ormRepository = getRepository(Post);
     }
-    // async incrementLike(id: number): Promise<number> {
-    //     const likes = await this.ormRepository.count({
-    //         select: ['likes'],
-    //         where: {
-    //             id
-    //         }
-    //     })
-    //     return likes;
-    // }
-
+    
     async create(data: ICreatePostDTO): Promise<Post> {
         const post = await this.ormRepository.create(data);
         await this.ormRepository.save(post);

@@ -34,7 +34,7 @@ class TaskRepository implements ITaskRepository {
         const task = await this.ormRepository.findOne(id);
         return task;
     }
-    async create({ user_task, title, description, date }: ICreateTaskDTO): Promise<Task | undefined> {
+    async create({ user_task, title, description, date, time }: ICreateTaskDTO): Promise<Task | undefined> {
         const task = this.ormRepository.create({
             user_task,
             title,

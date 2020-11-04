@@ -36,7 +36,7 @@ class PostController {
 
         const posts = await listPost.execute();
 
-        return response.status(200).json({ posts });
+        return response.status(200).json(posts);
     }
 }
 

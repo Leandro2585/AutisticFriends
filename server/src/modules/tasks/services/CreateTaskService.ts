@@ -8,7 +8,7 @@ class CreateTaskService {
         @inject('TasksRepository')
         private tasksRepository: ITasksRepository,
     ) { }
-    public async execute({ user_task, title, description, date }: ICreateTaskDTO) {
+    public async execute({ user_task, title, description, date, time }: ICreateTaskDTO) {
         const task = await this.tasksRepository.create({
             user_task,
             title,

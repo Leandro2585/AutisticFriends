@@ -15,6 +15,7 @@ class ListPostService {
     ) { }
     public async execute() {
         const posts = await this.postsRepository.findAll();
+
         return posts;
     }
 }
