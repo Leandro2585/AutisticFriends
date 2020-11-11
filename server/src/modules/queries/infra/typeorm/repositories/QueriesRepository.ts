@@ -12,10 +12,11 @@ class QuerieRepository implements IQueriesRepository {
     async checkQuerieIsTheUser(user_querie: number, id: number): Promise<Querie | undefined> {
         const querie = await this.ormRepository.findOne({
             where: {
-                user_querie,
-                id
+                user_querie: user_querie,
+                id: id
             }
         });
+
         return querie;
     }
 
@@ -34,14 +35,14 @@ class QuerieRepository implements IQueriesRepository {
         const querie = await this.ormRepository.findOne(id);
         return querie;
     }
-    async create({ 
-        user_querie, 
-        title, 
-        description, 
-        date, 
-        time, 
-        latitude, 
-        longitude 
+    async create({
+        user_querie,
+        title,
+        description,
+        date,
+        time,
+        latitude,
+        longitude
     }: ICreateQuerieDTO): Promise<Querie | undefined> {
         const querie = this.ormRepository.create({
             user_querie,
@@ -49,8 +50,8 @@ class QuerieRepository implements IQueriesRepository {
             description,
             date,
             time,
-            latitude, 
-            longitude 
+            latitude,
+            longitude
         });
         await this.ormRepository.save(querie);
         return querie;

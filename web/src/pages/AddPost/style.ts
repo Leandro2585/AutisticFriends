@@ -4,7 +4,7 @@ export const Form = styled.form`
   margin: 20px auto;
   padding: 10px;
   width: 70%;
-  height: 65vh;
+  height: 70vh;
   background: #fff;
   border-radius: 8px;
   display: flex;

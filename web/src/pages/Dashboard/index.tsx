@@ -17,14 +17,13 @@ const Dashboard: React.FC = () => {
   const [posts, setPosts] = useState<PostsProps[]>([]);
 
   useEffect(() => {
-    api.get('/post').then(response => setPosts(response.data)
-    );
+    api.get('/post').then(response => setPosts(response.data));
   },[]);
 
   return(
     <Container>
-      {posts.map(item => { 
-          
+      {posts.map(item => {
+
           return (
             <Post key={item.id}>
               <Header>

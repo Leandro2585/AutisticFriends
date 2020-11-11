@@ -8,15 +8,16 @@ import DeleteQuerieService from '@modules/queries/services/DeleteQuerieService';
 
 class QuerieController {
     public async create(request: Request, response: Response): Promise<Response> {
-        const { 
-            user_querie, 
-            title, 
-            description, 
-            date, 
+        const {
+            user_querie,
+            title,
+            description,
+            date,
             time,
             latitude,
             longitude
         } = request.body;
+
         const parsedDate = parseISO(date);
 
         const createQuerie = container.resolve(CreateQuerieService);
@@ -44,8 +45,9 @@ class QuerieController {
     public async delete(request: Request, response: Response): Promise<Response> {
         const { user_querie } = request.headers;
         const { id } = request.params;
+        const parsedId = Number(id);
         const deleteQuerie = container.resolve(DeleteQuerieService);
-        await deleteQuerie.execute({ user_querie, id });
+        await deleteQuerie.execute({ user_querie, id: parsedId });
 
         return response.json({ message: 'Querie successfully deleted' });
     }

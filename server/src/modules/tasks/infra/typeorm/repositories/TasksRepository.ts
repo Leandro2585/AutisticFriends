@@ -12,8 +12,8 @@ class TaskRepository implements ITaskRepository {
     async checkTaskIsTheUser(user_task: number, id: number): Promise<Task | undefined> {
         const task = await this.ormRepository.findOne({
             where: {
-                user_task,
-                id
+                user_task: user_task,
+                id: id
             }
         });
         return task;

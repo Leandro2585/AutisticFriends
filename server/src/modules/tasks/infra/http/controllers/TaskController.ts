@@ -33,8 +33,10 @@ class TaskController {
     public async delete(request: Request, response: Response): Promise<Response> {
         const { user_task } = request.headers;
         const { id } = request.params;
+        const pasedId = Number(id);
         const deleteTask = container.resolve(DeleteTaskService);
-        await deleteTask.execute({ user_task, id });
+
+        await deleteTask.execute({user_task , id: pasedId});
         return response.json({ message: 'Task successfully deleted' });
     }
 }

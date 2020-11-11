@@ -8,6 +8,7 @@ export const Container = styled.ul`
 	grid-template-columns: repeat(2, 1fr);
 	list-style: none;
 	grid-gap: 24px;
+	overflow-y: scroll;
 	padding: 24px;
   li {
     border-radius: 10px;
@@ -25,10 +26,13 @@ export const Container = styled.ul`
     }
     strong{
       font-size: 24px;
+      opacity: 0.8;
+
     }
     p {
       font-size: 18px;
       margin-top: 20px;
+      opacity: 0.8;
     }
   }
 `;
@@ -41,5 +45,7 @@ export const Footer = styled.footer`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  
+  span {
+    opacity: 0.8;
+  }
 `;

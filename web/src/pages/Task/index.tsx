@@ -19,12 +19,14 @@ const Task: React.FC = () => {
 
     const { user } = useAuth();
     const { addToast } = useToast();
+    
+    const data = {
+          user_task: String(user.id)
+        };
 
     useEffect(() => {
       api.get('task', {
-        headers: {
-          user_task: user.id
-        }
+          headers: data
       }).then(response => {
         setTasks(response.data);
       });
@@ -32,10 +34,9 @@ const Task: React.FC = () => {
 
     async function handleDelete(id: number){
       try{
+        
         await api.delete(`task/${id}`, {
-          headers: {
-            user_task: String(user.id)
-          }
+          headers: data
         });
 
         setTasks(tasks.filter(task => task.id !== id));

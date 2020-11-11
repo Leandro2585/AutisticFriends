@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.form`
   grid-area: container;
-  margin:0px auto;
+  margin:20px auto;
   width: 50vw;
   height: 80vh;
   padding: 2vh;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;

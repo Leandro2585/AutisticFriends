@@ -24,12 +24,14 @@ const Querie: React.FC = () => {
 
     const { user } = useAuth();
     const { addToast } = useToast();
+    
+    const data = {
+          user_querie: String(user.id)
+    	};
 
     useEffect(() => {
       api.get('querie', {
-        headers: {
-          user_querie: user.id
-        }
+      	headers: data
       }).then(response => {
         setQueries(response.data);
       });
@@ -38,10 +40,10 @@ const Querie: React.FC = () => {
     async function handleDelete(id: number){
       try{
         await api.delete(`querie/${id}`, {
-          headers: {
-            user_querie: String(user.id)
-          }
-        });
+        	headers: {
+	      		data
+      		}
+      	});
 
         setQueries(queries.filter(querie => querie.id !== id));
 
@@ -87,14 +89,14 @@ const Querie: React.FC = () => {
                           querie.longitude
                         ]}
                       />
-                    
+
                   </Map>
                   <a
                     className="toGoogleMaps"
                     target="_blank"
                     rel="noopener noreferrer"
                     href={`https://www.google.com/maps/dir/?api=1&destination=${querie.latitude},${querie.longitude}`}
-                        
+
                   >Ver no Google Maps<FiArrowRight size={15} color="#6c6c80"/></a>
               </MapContainer>
               <Footer>

@@ -8,12 +8,12 @@ class CreateQuerieService {
         @inject('QueriesRepository')
         private querieRepository: IQueriesRepository,
     ) { }
-    public async execute({ 
-        user_querie, 
-        title, 
-        description, 
-        date, 
-        time, 
+    public async execute({
+        user_querie,
+        title,
+        description,
+        date,
+        time,
         latitude,
         longitude
     }: ICreateQuerieDTO) {
