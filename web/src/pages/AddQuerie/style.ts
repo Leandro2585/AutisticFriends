@@ -3,13 +3,25 @@ import styled from 'styled-components';
 export const Container = styled.form`
   grid-area: container;
   margin:0px auto;
-  width: 50vw;
+  width: 70vw;
   height: 80vh;
   padding: 2vh;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
-  flex-direction: column;
+  overflow: hidden;
   background: #f8f8f2;
+  .leaflet-container {
+
+    margin-bottom: 40px;
+    border: 1px solid #D3E2E5;
+    border-radius: 20px;
+  }
+`;
+export const ContainerData = styled.div`
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   *{
     width: 90%;
     margin-left: 5%;
@@ -29,11 +41,13 @@ export const Container = styled.form`
     }
   }
   textarea{
+    background: #F0F0F5;
     font-size: 16px;
     text-indent: 1em;
     line-height: 24px;
     border: 1px solid rgba(0,0,0,0.1);
     resize:none;
+    color: #6c6c80;
     &::placeholder {
       color: #A0A0B2;
     }
@@ -50,6 +64,4 @@ export const Container = styled.form`
     height: 6vh;
     color: #f8f8f2;
   }
-
 `;
-

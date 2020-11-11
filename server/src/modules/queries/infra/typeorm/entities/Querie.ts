@@ -23,6 +23,12 @@ class Querie {
 
     @Column('time')
     time: string;
+
+    @Column()
+    latitude: number;
+
+    @Column()
+    longitude: number;
     
     @Column()
     user_querie: number;

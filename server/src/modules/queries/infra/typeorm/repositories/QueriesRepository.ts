@@ -1,5 +1,5 @@
-import ICreateQuerieDTO from '@modules/tasks/dtos/ICreateTaskDTO';
-import IQueriesRepository from '@modules/tasks/repositories/IQueriesRepository';
+import ICreateQuerieDTO from '@modules/queries/dtos/ICreateQuerieDTO';
+import IQueriesRepository from '@modules/queries/repositories/IQueriesRepository';
 import { getRepository, Repository } from 'typeorm';
 import Querie from '../entities/Querie';
 
@@ -34,13 +34,23 @@ class QuerieRepository implements IQueriesRepository {
         const querie = await this.ormRepository.findOne(id);
         return querie;
     }
-    async create({ user_querie, title, description, date, time }: ICreateQuerieDTO): Promise<Querie | undefined> {
+    async create({ 
+        user_querie, 
+        title, 
+        description, 
+        date, 
+        time, 
+        latitude, 
+        longitude 
+    }: ICreateQuerieDTO): Promise<Querie | undefined> {
         const querie = this.ormRepository.create({
             user_querie,
             title,
             description,
             date,
-            time
+            time,
+            latitude, 
+            longitude 
         });
         await this.ormRepository.save(querie);
         return querie;

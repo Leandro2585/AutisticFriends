@@ -55,7 +55,7 @@ const AddTask: React.FC = () => {
                 <span>Descrição</span>
                 <textarea
                   cols={46}
-                  rows={6}
+                  rows={4}
                   value={description}
                   onChange={e => setDescription(e.target.value)}
                 ></textarea>

@@ -8,13 +8,23 @@ class CreateQuerieService {
         @inject('QueriesRepository')
         private querieRepository: IQueriesRepository,
     ) { }
-    public async execute({ user_querie, title, description, date, time }: ICreateQuerieDTO) {
+    public async execute({ 
+        user_querie, 
+        title, 
+        description, 
+        date, 
+        time, 
+        latitude,
+        longitude
+    }: ICreateQuerieDTO) {
         const querie = await this.querieRepository.create({
             user_querie,
             title,
             description,
             date,
-            time
+            time,
+            latitude,
+            longitude
         });
         return querie;
     }

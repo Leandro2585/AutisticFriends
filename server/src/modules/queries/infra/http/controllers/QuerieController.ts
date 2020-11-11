@@ -8,7 +8,15 @@ import DeleteQuerieService from '@modules/queries/services/DeleteQuerieService';
 
 class QuerieController {
     public async create(request: Request, response: Response): Promise<Response> {
-        const { user_querie, title, description, date, time } = request.body;
+        const { 
+            user_querie, 
+            title, 
+            description, 
+            date, 
+            time,
+            latitude,
+            longitude
+        } = request.body;
         const parsedDate = parseISO(date);
 
         const createQuerie = container.resolve(CreateQuerieService);
@@ -18,7 +26,9 @@ class QuerieController {
             title,
             description,
             date: parsedDate,
-            time
+            time,
+            latitude,
+            longitude
         });
 
         return response.json(querie);

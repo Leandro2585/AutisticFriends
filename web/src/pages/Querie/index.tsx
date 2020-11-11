@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import { useAuth } from '../../hooks/AuthContext';
 import { useToast } from '../../hooks/ToastContext';
-import { Container, Footer } from './style';
+import mapIcon from '../../utils/mapIcon';
+import { FiArrowRight } from 'react-icons/fi';
+import { Marker, TileLayer, Map } from 'react-leaflet';
+import { Container, MapContainer, Footer } from './style';
 import api from '../../services/api';
 
 interface Queries {
@@ -11,6 +14,8 @@ interface Queries {
   description: string;
   date: string;
   time: string;
+  latitude: number;
+  longitude: number;
   user_querie: number;
 }
 
@@ -59,6 +64,39 @@ const Querie: React.FC = () => {
             <li key={querie.id}>
       				<strong>{querie.title}</strong>
       				<p>{querie.description}</p>
+              <MapContainer>
+                <Map
+                    center={[querie.latitude,querie.longitude]}
+                    style={{ width: '90%', height: 180 }}
+                    zoom={16}
+                    dragging={false}
+                    touchZoom={false}
+                    zoomControl={false}
+                    scrollWheelZoom={false}
+                    doubleClickZoom={false}
+                  >
+                    <TileLayer
+                      url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                    />
+
+                      <Marker
+                        interactive={false}
+                        icon={mapIcon}
+                        position={[
+                          querie.latitude,
+                          querie.longitude
+                        ]}
+                      />
+                    
+                  </Map>
+                  <a
+                    className="toGoogleMaps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${querie.latitude},${querie.longitude}`}
+                        
+                  >Ver no Google Maps<FiArrowRight size={15} color="#6c6c80"/></a>
+              </MapContainer>
               <Footer>
                 <span>{querie.date}</span>
         				<span>{querie.time}</span>

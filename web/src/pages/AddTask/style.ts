@@ -29,6 +29,7 @@ export const Container = styled.form`
     }
   }
   textarea{
+    background: #F0F0F5;
     font-size: 16px;
     text-indent: 1em;
     line-height: 24px;

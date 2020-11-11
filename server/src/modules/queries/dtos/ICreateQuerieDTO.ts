@@ -4,4 +4,6 @@ export default interface ICreateTaskDTO {
     description: string;
     date: Date;
     time: string;
+    latitude: number;
+    longitude: number;
 }
