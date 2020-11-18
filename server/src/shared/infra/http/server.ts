@@ -32,5 +32,5 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 });
 
 app.listen(process.env.APP_API_PORT || 3333, () => {
-    console.log('Server started at https://localhost:3333');
+    console.log('Server started at http://localhost:3333');
 });
