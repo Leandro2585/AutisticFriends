@@ -6,7 +6,7 @@ Ela também poderá fazer postagens tornando o seus estilo de vida público a ou
 </p>
 
 <h4 align="center">
-🚧 Concluídos 🚧
+🚧 Concluído 🚧
 </h4>
 <h2>Web Pages</h2>
 <h4>Logon</h4>
@@ -81,6 +81,9 @@ $ create database amigos_do_autista;
 
 # Saia do MySql
 $ exit;
+
+# Execute as migrations para criar as estruturas de tabelas no banco de dados
+$ npm run typeorm migration:run
 
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev:server
