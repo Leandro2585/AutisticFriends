@@ -166,7 +166,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   Maps:  **[Leaflet](https://react-leaflet.js.org/en/)**
 -   Eslint:  **[Eslint](https://eslint.org/)**
 -   Prettier:  **[Prettier](https://prettier.io/)**
--   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)
+-   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
 -   Teste de API:  **[Insomnia](https://insomnia.rest/)**
 
  <br/> Entre em contato comigo:<br/> [![Linkedin Badge](https://img.shields.io/badge/-LeandroReal-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandro-r-434b811a5/)](https://www.linkedin.com/in/leandro-r-434b811a5/)
