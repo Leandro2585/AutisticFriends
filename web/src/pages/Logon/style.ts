@@ -13,6 +13,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    img {
+      width: 200px;
+      height: 200px;
+    }
     .icon1 {
       margin-top: 50px;
     }
@@ -34,7 +38,7 @@ export const Container = styled.div`
       }
       label{
         color: rgba(0,0,0,0.8);
-        padding-top:10px;
+        padding-top:30px;
         padding-bottom:5px;
         font-weight: bold;
       }
@@ -48,12 +52,13 @@ export const Container = styled.div`
       }
     }
     h1{
-      margin-top: 5vh;
-      font-size: 25px;
+      margin-top: 1vh;
+      font-size: 24px;
       color: rgba(0,0,0,0.8);
     }
     h2{
-      margin-top: 5vh;
+      margin-top: 1vh;
+      margin-bottom: 1vh;
       font-weight: normal;
       font-size: 16px;
       color: rgba(0,0,0,0.5);

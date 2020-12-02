@@ -7,7 +7,11 @@ export const Container = styled.aside`
   .logo{
     width: 100%;
     height: 20vh;
-    background:var(--blue);
+    background:#f8f8f2;
+    img {
+      width: 150px;
+      height: 150px;
+    }
   }
   nav{
     width: 100%;

@@ -5,7 +5,7 @@ import { useToast } from '../../hooks/ToastContext';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft, FiLock, FiMail, FiUser } from 'react-icons/fi';
-import { FaUserCircle } from 'react-icons/fa';
+import logoA2 from '../../assets/logo.svg';
 import imageBackground from '../../assets/background-register.svg';
 import Input from '../../components/Input';
 import { Container } from './style';
@@ -68,9 +68,9 @@ const Register: React.FC = () => {
 
     return (
         <Container>
-            <img src={imageBackground} />
+            <img className="background" src={imageBackground} />
             <Form ref={formRef} className="frm" onSubmit={handleRegisterSubmit}>
-                <FaUserCircle className="icon1" size={50} color="#0197F6" />
+                <img className="icon1" src={logoA2}/>
 
                 <h1>Cadastre-se</h1>
                 <h2>Sua plataforma de auxílio ao autista</h2>

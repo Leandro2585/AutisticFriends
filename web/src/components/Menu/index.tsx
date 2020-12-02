@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiHome, FiPower, FiUsers, FiCalendar, FiBookmark } from 'react-icons/fi';
+import { FiHome, FiPower, FiCalendar, FiBookmark } from 'react-icons/fi';
+import logoA2 from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/AuthContext';
 import { Container } from './style';
 
@@ -11,6 +12,7 @@ const Menu: React.FC = () => {
     return(
         <Container>
           <div className="logo">
+            <img src={logoA2}/>
           </div>
           <nav>
             <Link to="/dashboard">Dashboard<FiHome size={18}/></Link>

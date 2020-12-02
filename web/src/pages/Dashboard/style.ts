@@ -16,6 +16,9 @@ export const Post = styled.li`
   position: relative;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   border-top: 1px solid rgba(0,0,0,0.2);
+  &:nth-child(1) {
+    margin-top: 3%;
+  }
   img{
   	width: 100%;
   	height: auto;
@@ -25,7 +28,7 @@ export const Post = styled.li`
 export const Header = styled.header`
 	display: flex;
   padding: 10px;
-  height: 8vh;  
+  height: 8vh;
 	align-items: center;
   h2 {
     margin-left: 15px;

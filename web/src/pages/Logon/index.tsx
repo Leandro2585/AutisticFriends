@@ -7,6 +7,7 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { FaUserPlus, FaUserCircle } from 'react-icons/fa';
+import logoA2 from '../../assets/logo.svg';
 import { FiMail, FiLock } from 'react-icons/fi';
 import imageBackground from '../../assets/background.svg';
 import Input from '../../components/Input';
@@ -68,7 +69,7 @@ const Logon: React.FC = () => {
     return (
         <Container>
             <Form ref={formRef} className="frm" onSubmit={handleSubmit}>
-                <FaUserCircle className="icon1" size={50} color="#0197F6" />
+                <img className="icon1" src={logoA2}/>
 
                 <h1>Bem Vindo</h1>
                 <h2>Faça seu logon aqui</h2>
